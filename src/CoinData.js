@@ -3,22 +3,17 @@
 import React from 'react';
 import { ListItem, ListItemText } from 'material-ui/List';
 
+const folderItems = ['Inbox', 'Starred', 'Send mail', 'Drafts', 'Drafts']
+
 export const mailFolderListItems = (
   <div>
-    <ListItem button>
-      <ListItemText primary="Inbox" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Starred" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Send mail" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Drafts" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Drafts" />
-    </ListItem>
+    {folderItems.map((itemName) => (
+      <ListItem 
+        key={itemName}
+        button
+      >
+        <ListItemText primary={itemName} />
+      </ListItem>
+    ))}
   </div>
 );
